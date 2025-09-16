@@ -1,10 +1,12 @@
 import React from 'react';
 import { Heart, Smartphone, Clock } from 'lucide-react';
+
 const Hero: React.FC = () => {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-teal-50 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side: App intro */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Medicine Reminder App
@@ -12,38 +14,51 @@ const Hero: React.FC = () => {
             <p className="text-xl md:text-2xl text-blue-600 font-semibold mb-8">
               Will Connect Patients, Doctors, and Pharmacists for Safer, Smarter Medication
             </p>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl">
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
               See how hospitals will use our app to ensure every patient gets the right medicine at the right time.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
+              <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm transition hover:shadow-md">
                 <Heart className="h-5 w-5 text-red-500" />
                 <span className="text-sm font-medium text-gray-700">Patient Care</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+              <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm transition hover:shadow-md">
                 <Clock className="h-5 w-5 text-blue-500" />
                 <span className="text-sm font-medium text-gray-700">Timely Reminders</span>
               </div>
-              <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+              <div className="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm transition hover:shadow-md">
                 <Smartphone className="h-5 w-5 text-green-500" />
                 <span className="text-sm font-medium text-gray-700">Mobile First</span>
               </div>
             </div>
-            {/* Attribution line - small and subtle */}
-            <div className="mt-10 text-center lg:text-left">
-  <div className="text-base md:text-lg font-semibold text-gray-700 leading-relaxed">
+
+            {/* Attribution (visible everywhere, nicely formatted) */}
+            <div className="border-t border-gray-200 pt-5 mt-8 max-w-2xl mx-auto lg:mx-0">
+  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 justify-center lg:justify-start text-base md:text-lg font-semibold text-gray-700">
     <span>Concept & Research by:</span>
-    <span className="text-blue-600 font-bold ml-2">Shreyash Salpure</span>
-    <span className="block mt-1">Website Developed by:
-      <span className="text-blue-600 font-bold ml-2">Hardik Baviskar</span>
-    </span>
+    <div className="flex flex-col items-center sm:flex-row sm:items-center gap-0 sm:gap-2">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 font-bold hover:underline"
+      >
+        Shreyash Salpure
+      </a>
+      <span className="sm:inline hidden">,</span>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 font-bold hover:underline"
+      >
+        Mansi Nikam
+      </a>
+    </div>
   </div>
 </div>
 
-
-
           </div>
           
+          {/* Right side: Demo Card */}
           <div className="relative">
             <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md mx-auto">
               <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl p-6 text-white text-center mb-6">
@@ -71,12 +86,6 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
-        {/* Attribution for mobile view, only if you want it below the grid instead */}
-        {/* <div className="mt-8 text-center">
-          <span className="inline-block bg-gray-100 text-gray-500 text-xs px-3 py-1 rounded-full shadow-sm font-medium">
-            Idea by: <span className="text-blue-600 font-semibold">Your Name</span> | Website by: <span className="text-teal-600 font-semibold">Your Name</span>
-          </span>
-        </div> */}
       </div>
     </section>
   );
