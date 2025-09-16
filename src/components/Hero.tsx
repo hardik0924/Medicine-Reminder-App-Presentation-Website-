@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Tablet Reminder App
+              Medicine Reminder App
             </h1>
             <p className="text-xl md:text-2xl text-blue-600 font-semibold mb-8">
               Will Connect Patients, Doctors, and Pharmacists for Safer, Smarter Medication

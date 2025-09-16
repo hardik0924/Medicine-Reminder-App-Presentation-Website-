@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
                 <Heart className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Tablet Reminder App</h3>
+                <h3 className="text-xl font-bold">Medicine Reminder App</h3>
                 <p className="text-gray-400">Healthcare Workflow Solution</p>
               </div>
             </div>
