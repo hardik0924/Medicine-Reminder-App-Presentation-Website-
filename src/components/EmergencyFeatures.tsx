@@ -157,11 +157,13 @@ const EmergencyFeatures: React.FC = () => {
             {emergencySteps.map((step, index) => (
               <div key={index} className="text-center group">
                 <div className="relative mb-4">
+                  {/* Step Number - positioned above icon */}
+                  <div className="bg-red-600 w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span className="text-white font-bold text-sm">{step.step}</span>
+                  </div>
+                  {/* Icon Circle */}
                   <div className="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
                     <step.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <div className="absolute -top-2 -right-2 bg-red-600 w-8 h-8 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">{step.step}</span>
                   </div>
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">{step.title}</h4>
