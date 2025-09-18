@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 // import UserRoles from './components/UserRoles';
 import WorkflowTimeline from './components/WorkflowTimeline';
+import EmergencyFeatures from './components/EmergencyFeatures';
 import Benefits from './components/Benefits';
 import Screenshots from './components/Screenshots';
 import Footer from './components/Footer';
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       {/* <UserRoles /> */}
       <WorkflowTimeline />
+      <EmergencyFeatures />
       <Benefits />
       <Screenshots />
       <Footer />
