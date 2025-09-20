@@ -136,7 +136,7 @@ const Screenshots: React.FC = () => {
                         <Smartphone className="h-8 w-8 text-blue-600" />
                       </div>
                       <h4 className="text-lg font-bold text-gray-900 mb-2">Verify Your Phone</h4>
-                      <p className="text-sm text-gray-600">Enter the 6-digit code sent to<br />+91 98765 43210</p>
+                      <p className="text-sm text-gray-600">Enter the 6-digit code sent to<br />+91 7841082472</p>
                     </div>
                     <div className="flex justify-center space-x-2 mb-6">
                       {otpValues.map((value, index) => (
