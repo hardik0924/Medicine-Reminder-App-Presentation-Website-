@@ -63,7 +63,7 @@ const EmergencyFeatures: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-red-50 to-orange-50">
+    <section id="emergency" className="py-16 bg-gradient-to-br from-red-50 to-orange-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">

@@ -3,7 +3,7 @@ import { MessageCircle, AlertTriangle, HeartPulse } from 'lucide-react';
 
 const ChatbotSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-tr from-blue-50 to-teal-50 py-16">
+    <section id="chatbot" className="bg-gradient-to-tr from-blue-50 to-teal-50 py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-8">
         <div className="mb-10 text-center">
           <div className="inline-flex items-center bg-blue-100 px-4 py-2 rounded-full">

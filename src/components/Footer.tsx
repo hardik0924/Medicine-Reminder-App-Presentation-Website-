@@ -4,7 +4,6 @@ import { Heart, Linkedin } from 'lucide-react';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-16">
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Brand area */}
         <div className="flex flex-col items-center text-center gap-8 mb-8">
@@ -45,15 +44,23 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Hardik Baviskar's LinkedIn Profile"
-                  className="flex items-center gap-1 text-blue-400 font-bold hover:text-white transition-colors"
+                  className="flex items-center gap-1 text-blue-500 font-bold hover:text-white transition-colors"
                 >
-                  Hardik Baviskar
-                  <Linkedin className="h-4 w-4" />
+                  <u>Hardik Baviskar</u>
+                  <Linkedin className="h-6 w-6" />
                 </a>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Copyright Section */}
+        <div className="mt-8 text-center">
+  <span className="text-sm text-gray-500">
+    © 2025 Medicine Reminder App Prototype. All rights reserved by the developer.
+  </span>
+</div>
+
       </div>
     </footer>
   );

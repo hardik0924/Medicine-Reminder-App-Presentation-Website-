@@ -101,7 +101,7 @@ const Screenshots: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section id="demo" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -216,7 +216,7 @@ const Screenshots: React.FC = () => {
                           />
                           <div>
                             <p className="text-sm font-medium text-gray-900">{selectedMedicine.name}</p>
-                            <p className="text-xs text-gray-600">{selectedMedicine.description}</p>
+
                           </div>
                         </div>
                       </div>
