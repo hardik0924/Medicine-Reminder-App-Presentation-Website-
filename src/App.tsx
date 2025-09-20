@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import ChatbotSection from './components/ChatbotSection';
 // import UserRoles from './components/UserRoles';
 import WorkflowTimeline from './components/WorkflowTimeline';
 import EmergencyFeatures from './components/EmergencyFeatures';
@@ -16,9 +17,11 @@ function App() {
       {/* <UserRoles /> */}
       <Screenshots />
       <WorkflowTimeline />
+      <ChatbotSection />
       <EmergencyFeatures />
-      <Benefits />
       
+      <Benefits />
+     
       <Footer />
     </div>
   );
