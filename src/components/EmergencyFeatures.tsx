@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Phone, 
   MapPin, 
@@ -11,6 +11,15 @@ import {
 } from 'lucide-react';
 
 const EmergencyFeatures: React.FC = () => {
+  const [isEmergencyActive, setIsEmergencyActive] = useState(false);
+
+  const handleEmergencyClick = () => {
+    setIsEmergencyActive(true);
+  };
+
+  const resetEmergency = () => {
+    setIsEmergencyActive(false);
+  };
   const emergencyContacts = [
     {
       icon: Building2,
@@ -84,52 +93,78 @@ const EmergencyFeatures: React.FC = () => {
         <div className="max-w-md mx-auto mb-12">
           <div className="bg-white rounded-3xl shadow-2xl p-8 border-4 border-red-100">
             <div className="text-center mb-6">
-              <div className="bg-red-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+              <button
+                className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 transition-all duration-300 ${
+                  isEmergencyActive 
+                    ? 'bg-red-600 animate-pulse scale-110' 
+                    : 'bg-red-500 hover:bg-red-600 hover:scale-105'
+                }`}
+                onClick={handleEmergencyClick}
+              >
                 <AlertTriangle className="h-10 w-10 text-white" />
-              </div>
+              </button>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Emergency Button</h3>
-              <p className="text-gray-600">Press and hold for 3 seconds</p>
+              <p className="text-gray-600">Click to activate emergency services</p>
+              {isEmergencyActive && (
+                <button
+                  onClick={resetEmergency}
+                  className="mt-2 px-4 py-2 bg-gray-500 text-white text-sm rounded-lg hover:bg-gray-600 transition-colors"
+                >
+                  Reset Demo
+                </button>
+              )}
             </div>
             
-            <div className="bg-red-50 rounded-2xl p-6 mb-6">
-              <div className="flex items-center justify-center mb-4">
-                <MapPin className="h-6 w-6 text-red-500 mr-2" />
-                <span className="text-sm font-medium text-red-700">Location: Detected</span>
+            {!isEmergencyActive ? (
+              <div className="bg-gray-50 rounded-2xl p-6 mb-6">
+                <div className="text-center">
+                  <p className="text-sm text-gray-600 font-medium">Click the emergency button to activate</p>
+                  <p className="text-xs text-gray-500 mt-2">Demo will show emergency response process</p>
+                </div>
               </div>
-              <div className="text-center">
-                <p className="text-sm text-red-600 font-medium">Emergency services will be contacted with:</p>
-                <ul className="text-xs text-red-600 mt-2 space-y-1">
-                  <li>• Your exact location</li>
-                  <li>• Current medications</li>
-                  <li>• Medical history</li>
-                  <li>• Emergency contacts</li>
-                </ul>
-              </div>
-            </div>
+            ) : (
+              <>
+                <div className="bg-red-50 rounded-2xl p-6 mb-6">
+                  <div className="flex items-center justify-center mb-4">
+                    <MapPin className="h-6 w-6 text-red-500 mr-2" />
+                    <span className="text-sm font-medium text-red-700">Location: Detected</span>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm text-red-600 font-medium">Emergency services will be contacted with:</p>
+                    <ul className="text-xs text-red-600 mt-2 space-y-1">
+                      <li>• Your exact location</li>
+                      <li>• Current medications</li>
+                      <li>• Medical history</li>
+                      <li>• Emergency contacts</li>
+                    </ul>
+                  </div>
+                </div>
 
-            <div className="space-y-3">
-              <div className="flex items-center justify-between p-3 bg-red-100 rounded-lg">
-                <div className="flex items-center">
-                  <Building2 className="h-5 w-5 text-red-600 mr-2" />
-                  <span className="text-sm font-medium text-red-800">Hospital</span>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 bg-red-100 rounded-lg animate-fade-in">
+                    <div className="flex items-center">
+                      <Building2 className="h-5 w-5 text-red-600 mr-2" />
+                      <span className="text-sm font-medium text-red-800">Hospital</span>
+                    </div>
+                    <span className="text-xs text-red-600 font-semibold animate-pulse">Calling...</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-orange-100 rounded-lg animate-fade-in">
+                    <div className="flex items-center">
+                      <Truck className="h-5 w-5 text-orange-600 mr-2" />
+                      <span className="text-sm font-medium text-orange-800">Ambulance 108</span>
+                    </div>
+                    <span className="text-xs text-orange-600 font-semibold animate-pulse">Calling...</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-blue-100 rounded-lg animate-fade-in">
+                    <div className="flex items-center">
+                      <Users className="h-5 w-5 text-blue-600 mr-2" />
+                      <span className="text-sm font-medium text-blue-800">Family Contact</span>
+                    </div>
+                    <span className="text-xs text-blue-600 font-semibold animate-pulse">Notifying...</span>
+                  </div>
                 </div>
-                <span className="text-xs text-red-600 font-semibold">Calling...</span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-orange-100 rounded-lg">
-                <div className="flex items-center">
-                  <Truck className="h-5 w-5 text-orange-600 mr-2" />
-                  <span className="text-sm font-medium text-orange-800">Ambulance 108</span>
-                </div>
-                <span className="text-xs text-orange-600 font-semibold">Calling...</span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-blue-100 rounded-lg">
-                <div className="flex items-center">
-                  <Users className="h-5 w-5 text-blue-600 mr-2" />
-                  <span className="text-sm font-medium text-blue-800">Family Contact</span>
-                </div>
-                <span className="text-xs text-blue-600 font-semibold">Notifying...</span>
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </div>
 
